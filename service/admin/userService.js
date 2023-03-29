@@ -1,14 +1,17 @@
 const { where } = require('sequelize')
-const userModel = require('../../models/userModel')
+const UserModel = require('../../models/userModel')
 
 const UserService = {
     login: async ({ username, password }) => {
-        return userModel.findOne({
+        return UserModel.findOne({
             where: {
                 username,
                 password,
             },
         })
+    },
+    upload: async ({ id, username, gender, introduction, avatar }) => {
+        return UserModel.update({ username, gender, introduction, avatar }, { where: { id } })
     },
 }
 

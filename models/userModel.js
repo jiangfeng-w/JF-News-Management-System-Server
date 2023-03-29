@@ -15,12 +15,24 @@ const User = sequelize.define(
             allowNull: false,
         },
         password: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         role: {
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        gender: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        avatar: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        introduction: {
+            type: DataTypes.STRING,
+            allowNull: true,
         },
     },
     {
