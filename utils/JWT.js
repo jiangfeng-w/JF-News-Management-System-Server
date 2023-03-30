@@ -1,5 +1,4 @@
 const jsonwebtoken = require('jsonwebtoken')
-const { token } = require('morgan')
 // 密钥
 const secret = "Jiang Feng's Project"
 const JWT = {

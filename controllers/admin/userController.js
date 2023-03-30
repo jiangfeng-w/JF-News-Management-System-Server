@@ -22,7 +22,7 @@ const UserController = {
                         id: result.id,
                         username: result.username,
                     },
-                    '10h'
+                    '1h'
                 )
                 // 放在请求头中返回给前端
                 res.header('Authorization', token)
@@ -45,11 +45,8 @@ const UserController = {
 
     // 上传文件
     upload: async (req, res, next) => {
-        console.log(
-            '-------------------------------------------------------------------------------------------------------'
-        )
-        console.log(req.body)
-        console.log(req.file)
+        // console.log(req.body)
+        // console.log(req.file)
         // 把用户信息解构出来
         const { username, gender, introduction, oldAvatar } = req.body
         let avatar
