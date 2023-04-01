@@ -36,6 +36,10 @@ const User = sequelize.define(
             type: DataTypes.STRING,
             allowNull: true,
         },
+        createTime: {
+            type: DataTypes.BIGINT,
+            allowNull: false,
+        },
     },
     {
         timestamps: false,
