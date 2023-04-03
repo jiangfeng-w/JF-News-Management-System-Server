@@ -56,7 +56,7 @@ const UserController = {
         } else {
             // 如果更改了头像,即有文件上传
             // 头像地址
-            avatar = `http://localhost:3000/avatars/${req.file.filename}`
+            avatar = `http://localhost:3000/images/avatars/${req.file.filename}`
             // 删除原来的头像
             deleteAvatar(oldAvatar)
         }
@@ -139,13 +139,13 @@ const UserController = {
             } else {
                 // 如果更改了头像,即有文件上传
                 // 头像地址
-                avatar = `http://localhost:3000/avatars/${req.file.filename}`
+                avatar = `http://localhost:3000/images/avatars/${req.file.filename}`
                 // 删除原来的头像
                 deleteAvatar('https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png')
             }
             // 对密码加密
             password = await hashPassword(password)
-            // 生成nanoid
+            // 生成uuid
             const id = uuidv4()
             // 生成时间戳
             const createTime = Date.now()
@@ -166,7 +166,7 @@ const UserController = {
                     message: '用户添加成功',
                 })
             } catch (error) {
-                console.log(error.message)
+                // console.log(error.message)
                 res.status(500).send({ message: '用户添加失败' })
             }
         } else {

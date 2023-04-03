@@ -7,6 +7,7 @@ var logger = require('morgan')
 var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
 const userRouter = require('./routes/admin/userRouter')
+const newsRouter = require('./routes/admin/newsRouter')
 const JWT = require('./utils/JWT')
 const checkToken = require('./utils/checkToken')
 
@@ -32,6 +33,7 @@ app.use('/users', usersRouter)
 app.use(checkToken)
 
 app.use(userRouter)
+app.use(newsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

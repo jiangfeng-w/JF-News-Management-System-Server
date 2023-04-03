@@ -1,47 +1,47 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../config/dbconfig')
 
-const User = sequelize.define(
-    'User',
+const News = sequelize.define(
+    'News',
     {
         id: {
             type: DataTypes.STRING,
             allowNull: false,
             primaryKey: true,
         },
-        username: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        password: {
-            type: DataTypes.STRING,
+        content: {
+            type: DataTypes.TEXT,
             allowNull: false,
         },
-        role: {
+        category: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        gender: {
-            type: DataTypes.INTEGER,
+        cover: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
-        avatar: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        introduction: {
-            type: DataTypes.STRING,
-            allowNull: true,
+        isPublishd: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
         },
         createTime: {
+            type: DataTypes.BIGINT,
+            allowNull: false,
+        },
+        updateTime: {
             type: DataTypes.BIGINT,
             allowNull: false,
         },
     },
     {
         timestamps: false,
-        table: 'users',
+        table: 'news',
     }
 )
 
-module.exports = User
+module.exports = News

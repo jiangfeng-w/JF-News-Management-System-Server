@@ -41,6 +41,7 @@ const UserService = {
             })
         } else {
             return UserModel.findAll({
+                order: [['createTime', 'ASC']],
                 attributes: { exclude: ['password', 'gender'] },
             })
         }
