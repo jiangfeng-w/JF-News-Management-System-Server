@@ -1,47 +1,43 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../config/dbconfig')
 
-const News = sequelize.define(
-    'News',
+const Product = sequelize.define(
+    'Product',
     {
         id: {
             type: DataTypes.STRING,
             allowNull: false,
             primaryKey: true,
         },
-        title: {
+        product_name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        content: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-        },
-        category: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        cover: {
+        product_brief: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        isPublishd: {
-            type: DataTypes.INTEGER,
+        product_detail: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
-        createTime: {
+        product_image: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        create_time: {
             type: DataTypes.BIGINT,
             allowNull: false,
         },
-        updateTime: {
+        update_time: {
             type: DataTypes.BIGINT,
             allowNull: false,
         },
     },
     {
         timestamps: false,
-        tableName: 'news',
+        tableName: 'product',
     }
 )
 
-module.exports = News
+module.exports = Product

@@ -31,7 +31,6 @@ const NewsController = {
                 createTime,
                 updateTime,
             })
-            console.log(result)
             res.status(201).send({
                 message: '新闻添加成功',
             })
