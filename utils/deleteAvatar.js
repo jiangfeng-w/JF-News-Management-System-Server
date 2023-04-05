@@ -1,3 +1,4 @@
+// 删除头像
 const fs = require('fs')
 const path = require('path')
 
@@ -9,7 +10,7 @@ const deleteAvatar = avatarURL => {
     const filePath = path.join(__dirname, '../public/images/avatars/', filename).replace(/\//g, '\\')
     fs.unlink(filePath, err => {
         if (err) throw err
-        console.log('删除成功')
+        // console.log('删除成功')
     })
 }
 

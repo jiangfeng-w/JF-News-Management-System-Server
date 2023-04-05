@@ -14,13 +14,15 @@ router.post('/admin/user/login', UserController.login)
 router.post('/admin/user/upload', upload.single('file'), UserController.upload)
 // 修改密码
 router.post('/admin/user/changePass', UserController.changePass)
-// 添加用户
-router.post('/admin/user/add', upload.single('file'), UserController.add)
 
 // 用户列表的增删改查
 router.get('/admin/user/list/', UserController.getList)
 router.get('/admin/user/list/:id', UserController.getList)
-router.delete('/admin/user/list/:id', UserController.delList)
+// 增
+router.post('/admin/user/add', upload.single('file'), UserController.add)
+// 删
+router.put('/admin/user/list/:id', UserController.delList)
+// 改
 router.put('/admin/user/list/:id', UserController.putList)
 
 module.exports = router

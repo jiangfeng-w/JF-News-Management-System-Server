@@ -151,7 +151,7 @@ const UserController = {
             const createTime = Date.now()
             try {
                 // 传到service层
-                await UserService.add({
+                const result = await UserService.add({
                     id,
                     username,
                     password,
@@ -161,12 +161,10 @@ const UserController = {
                     avatar,
                     createTime,
                 })
-
                 res.status(201).send({
                     message: '用户添加成功',
                 })
             } catch (error) {
-                // console.log(error.message)
                 res.status(500).send({ message: '用户添加失败' })
             }
         } else {
@@ -193,8 +191,11 @@ const UserController = {
     // 删除用户
     delList: async (req, res) => {
         // console.log(req.params.id)
+        // console.log(req.body)
         const result = await UserService.delList(req.params)
         if (result === 1) {
+            // 删除头像
+            deleteAvatar(req.body.avatar)
             res.status(200).send({
                 message: '删除成功',
             })
