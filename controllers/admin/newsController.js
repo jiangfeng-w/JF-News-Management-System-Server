@@ -102,6 +102,7 @@ const NewsController = {
             content,
             category,
             cover,
+            updateTime: Date.now(),
         }
         const result = await NewsService.updateNews(newData)
         // console.log(result)

@@ -4,7 +4,7 @@ const path = require('path')
 
 const deleteAvatar = avatarURL => {
     const filename = avatarURL.substring(avatarURL.lastIndexOf('/') + 1)
-    const filePath = path.join(__dirname, '../public/images/newsCover/', filename).replace(/\//g, '\\')
+    const filePath = path.join(__dirname, '../public/images/productImage/', filename).replace(/\//g, '\\')
     fs.unlink(filePath, err => {
         if (err) throw err
         // console.log('删除成功')

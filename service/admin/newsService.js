@@ -33,8 +33,8 @@ const NewsService = {
         })
     },
     // 更新新闻
-    updateNews: async ({ id, title, content, category, cover }) => {
-        return NewsModel.update({ title, content, category, cover }, { where: { id } })
+    updateNews: async ({ id, title, content, category, cover, updateTime }) => {
+        return NewsModel.update({ title, content, category, cover, updateTime }, { where: { id } })
     },
 }
 
